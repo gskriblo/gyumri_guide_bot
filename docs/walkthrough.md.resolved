@@ -1,0 +1,27 @@
+# Gyumri Tour Guide - OpenStreetMap Migration Walkthrough
+
+I have successfully completed the migration to the new OpenStreetMap ([gyumri_places.json](file:///c:/Users/401-15/Desktop/python/langchain_version_2/openstreetmap/gyumri_places.json)) dataset!
+
+The bot will now generate tour routes using the comprehensive dataset fetched from the [openstreetmap_collect_gyumri.py](file:///c:/Users/401-15/Desktop/python/langchain_version_2/openstreetmap/openstreetmap_collect_gyumri.py) script.
+
+## What was changed
+
+### 1. [data_gyumri.py](file:///c:/Users/401-15/Desktop/python/langchain_version_2/data_gyumri.py)
+- We shifted the default json loading priority to look for [openstreetmap/gyumri_places.json](file:///c:/Users/401-15/Desktop/python/langchain_version_2/openstreetmap/gyumri_places.json) first.
+- Re-wrote the dataset parsing logic to be able to safely consume the heavily nested `tags` dictionary typical of OpenStreetMap data, while maintaining backward compatibility with the old OpenTripMap dataset.
+- Added logic to automatically glean the `category` of a location depending on its combination of OpenStreetMap tags (`amenity`, `tourism`, `historic`).
+- Added robust Bilingual Name parsing logic (parsing out `name:en` or `name:ru` with a fallback to the native [name](file:///c:/Users/401-15/Desktop/python/langchain_version_2/llm.py#86-90)).
+- Auto-generated a basic `short_description` from available tags if the OSM dataset did not have a dedicated description string (for example, combining `cuisine` tags and formatting them).
+
+### 2. [routing.py](file:///c:/Users/401-15/Desktop/python/langchain_version_2/routing.py)
+- Integrated the new robust naming scheme (`name_ru` -> `name_en` -> [name](file:///c:/Users/401-15/Desktop/python/langchain_version_2/llm.py#86-90) -> [id](file:///c:/Users/401-15/Desktop/python/langchain_version_2/main.py#35-40) fallback) into both [generate_programs](file:///c:/Users/401-15/Desktop/python/langchain_version_2/routing.py#6-58) and [format_program_options](file:///c:/Users/401-15/Desktop/python/langchain_version_2/routing.py#60-100).
+- Adjusted the `< 1.5` chill walk filter to cast the distance to `float` as a safety precaution against mismatched data types.
+
+### 3. [llm.py](file:///c:/Users/401-15/Desktop/python/langchain_version_2/llm.py)
+- Abstracted the [get_name_and_desc](file:///c:/Users/401-15/Desktop/python/langchain_version_2/llm.py#86-90) naming logic into a helper function so that the LLM continues referencing the places properly when building its prompt context array.
+
+## Verification
+I ran a test Python script generating programs natively from the newly updated functions and confirmed that:
+1. Coordinates matched places accurately.
+2. The bot sorted places successfully into their proper route buckets (Classic, Food, Chill).
+3. OpenStreetMap tags were correctly turned into readable point-of-interest titles (e.g. `I Love Gyumri`, `KFC`, `Тар-ту`).
