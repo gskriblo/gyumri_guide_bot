@@ -14,19 +14,17 @@ def _load_places() -> List[Dict[str, Any]]:
 
     base_dir = os.path.dirname(__file__)
 
-    # Default to the new OSM dataset
+    # Default to the OSM dataset
     env_path = os.environ.get("PLACES_JSON")
     candidates = [
         env_path,
-        os.path.join(base_dir, "openstreetmap", "gyumri_places.json"),
         os.path.join(base_dir, "places_gyumri.json"),
-        os.path.join(base_dir, "places_gyumri_mvp.json"),
     ]
 
     path = next((p for p in candidates if p and os.path.exists(p)), None)
     if path is None:
         raise FileNotFoundError(
-            "Places database not found. Tried PLACES_JSON, gyumri_places.json, places_gyumri.json, etc."
+            "Places database not found. Tried PLACES_JSON, places_gyumri.json."
         )
 
     with open(path, "r", encoding="utf-8") as f:
@@ -72,9 +70,9 @@ def get_nearby_places(
             continue
 
         # Extract category (OSM logic)
-        cat = "other"
+        cat = p.get("category", "other")
         tags = p.get("tags", {})
-        if isinstance(tags, dict):  # OSM format
+        if cat == "other" and isinstance(tags, dict):
             amenity = tags.get("amenity", "")
             tourism = tags.get("tourism", "")
             if amenity in ("restaurant", "cafe", "fast_food", "bar", "pub"):
@@ -83,8 +81,6 @@ def get_nearby_places(
                 cat = "sight"
             elif tags.get("historic"):
                 cat = "historic_architecture"
-        else: # Legacy OTM format
-            cat = p.get("category", "other")
             
         # Temporarily store normalized category in place dict for easier filtering
         p["_normalized_category"] = cat
