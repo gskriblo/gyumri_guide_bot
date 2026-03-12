@@ -101,6 +101,7 @@ def get_nearby_places(
         copy["_distance_km"] = round(dist, 2)
         # Ensure category is set
         copy["category"] = p.get("_normalized_category", "other")
+        copy["image_url"] = p.get("image_url")
         
         # Normalize names from OSM tags if needed
         if "tags" in p and isinstance(p["tags"], dict):

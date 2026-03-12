@@ -23,7 +23,8 @@
       "wikidata": "Q16388907",
       "wikipedia": "hy:Ձիթողցոնց տուն-թանգարան"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Dzitoghtsonts1.JPG/960px-Dzitoghtsonts1.JPG"
   },
   {
     "id": "node/1362152472",
@@ -52,7 +53,8 @@
       "smoking": "yes",
       "website": "http://www.gyumrifish.am"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/1415957933",
@@ -68,7 +70,8 @@
       "name:en": "King Ashot Voghormats",
       "name:ru": "Король Ашот"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/1415957939",
@@ -83,7 +86,8 @@
       "cuisine": "regional",
       "name": "Millenium"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/1415958734",
@@ -99,7 +103,8 @@
       "name:en": "Andranik",
       "name:hy": "Անդրանիկ"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/1415969663",
@@ -122,7 +127,8 @@
       "wikimedia_commons": "File:Statue_of_Mother_Armenia,_Gyumri,_(panoramio_26).jpg",
       "wikipedia": "en:Mother Armenia, Gyumri"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Statue_of_Mother_Armenia%2C_Gyumri%2C_%28panoramio_26%29.jpg"
   },
   {
     "id": "node/1422705238",
@@ -135,7 +141,8 @@
     "tags": {
       "tourism": "viewpoint"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/1422705243",
@@ -149,7 +156,8 @@
       "amenity": "restaurant",
       "name": "Oasis"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/1422710087",
@@ -166,7 +174,8 @@
       "name:en": "Vardan Mamikonian",
       "name:hy": "Վարդան Մամիկոնյան"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/m5wn3hf.jpg"
   },
   {
     "id": "node/1423079448",
@@ -183,7 +192,8 @@
       "name:en": "1988 Earthquake Memorial",
       "name:ru": "Мемориальный комплекс памяти жертв землетрясения 1988 года"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/6rrMnmJ.jpg"
   },
   {
     "id": "node/1423103598",
@@ -198,7 +208,8 @@
       "memorial": "statue",
       "name": "Anania Shirakatsi"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/1427181486",
@@ -214,7 +225,8 @@
       "name:en": "Garegin Njdeh",
       "name:hy": "Գարեգին Նժդեհ"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/1843882287",
@@ -231,7 +243,8 @@
       "name": "Տիգրան Մեծ",
       "name:en": "\"Tigran Mets\""
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/2398185494",
@@ -251,7 +264,8 @@
       "outdoor_seating": "yes",
       "smoking": "yes"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/2504857930",
@@ -269,7 +283,8 @@
       "memorial:conflict": "WW2",
       "war_memorial": "yes"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/2957860709",
@@ -288,7 +303,8 @@
       "name": "Բիստրո",
       "phone": "+(374)312-3-83-83"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/3222853653",
@@ -306,7 +322,8 @@
       "name:ru": "\"Ванатур\"",
       "phone": "+374 312 5 07 14, +374 312 5 01 92"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/3686020715",
@@ -321,7 +338,8 @@
       "name": "ԳՈՒՍԱՆԻՆ",
       "name:en": "Sheram"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/3689832992",
@@ -339,7 +357,8 @@
       "name:hy": "Սայաթ-Նովա",
       "name:ru": "Памятник \"Саят-Нова\""
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/3707579025",
@@ -355,7 +374,8 @@
       "name:en": "\"Troya\"",
       "name:ru": "Ресторан Троя"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/4281611174",
@@ -375,7 +395,8 @@
       "opening_hours": "Mo-Su 10:00-23:00",
       "phone": "+374 312 4 88 78"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/4292821790",
@@ -394,7 +415,8 @@
       "cuisine": "regional",
       "name": "\"Polos Mukuch\""
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/4401556389",
@@ -414,7 +436,8 @@
       "opening_hours": "Mo-Su 10:00-23:00",
       "phone": "+37460730503"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/4476654689",
@@ -431,7 +454,8 @@
       "name:fr": "Charles Aznavour",
       "name:ru": "Шарль Азнавур"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/4601287290",
@@ -458,7 +482,8 @@
       "wikidata": "Q20902348",
       "wikipedia": "en:Cathedral of the Holy Martyrs, Gyumri"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cathedral_of_the_Holy_Martyrs%2C_Gyumri_2020.jpg/960px-Cathedral_of_the_Holy_Martyrs%2C_Gyumri_2020.jpg"
   },
   {
     "id": "node/4643851992",
@@ -477,7 +502,8 @@
       "tourism": "museum",
       "wikidata": "Q16370038"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Avetik_Isahakyan_museum.jpg"
   },
   {
     "id": "node/4643879889",
@@ -495,7 +521,8 @@
       "tourism": "museum",
       "wikidata": "Q16393695"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Museum_of_Mher_Mkrtchyan_in_Gyumri.jpg"
   },
   {
     "id": "node/4840263623",
@@ -509,7 +536,8 @@
       "name:en": "Central market exchange money",
       "tourism": "attraction"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5139143022",
@@ -528,7 +556,8 @@
       "operator": "Taron Grigoryan",
       "phone": "+37477198917"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5183961921",
@@ -542,7 +571,8 @@
       "amenity": "restaurant",
       "name": "Քյալլա"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217718421",
@@ -562,7 +592,8 @@
       "outdoor_seating": "yes",
       "takeaway": "yes"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217718924",
@@ -577,7 +608,8 @@
       "internet_access": "wlan",
       "name": "Loft"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217720002",
@@ -598,7 +630,8 @@
       "outdoor_seating": "yes",
       "phone": "+374 98 10 20 10"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217720423",
@@ -625,7 +658,8 @@
       "power_supply": "yes",
       "socket:schuko": "6"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217741027",
@@ -640,7 +674,8 @@
       "name": "Հայդուկների պուրակ",
       "name:en": "Row of famous figure head statues"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217772809",
@@ -655,7 +690,8 @@
       "image": "https://i.imgur.com/t9pg4zg.jpg",
       "name": "Poloz Mukuch"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/t9pg4zg.jpg"
   },
   {
     "id": "node/5217781026",
@@ -669,7 +705,8 @@
       "historic": "monument",
       "name": "Khachkar row"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217799686",
@@ -684,7 +721,8 @@
       "name": "Balcony from \"Our Childhood Tango\"",
       "tourism": "attraction"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217809389",
@@ -708,7 +746,8 @@
       "website": "http://www.aslamazyanmuseum.com/",
       "wikidata": "Q16369665"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/The_Gallery_of_Mariam_and_Eranuhi_Aslamazyan_Sisters.jpg"
   },
   {
     "id": "node/5217816751",
@@ -726,7 +765,8 @@
       "name:en": "Ponchik Monchik",
       "price": "budget"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217819725",
@@ -751,7 +791,8 @@
       "socket:schuko": "15",
       "website": "https://herbsandhoney.am"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217823026",
@@ -771,7 +812,8 @@
       "name": "Yaghli House",
       "opening_hours": "Mo-Su 10:00-23:30"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217842368",
@@ -785,7 +827,8 @@
       "historic": "monument",
       "name": "Khachkar to Sumgait Victims"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217843298",
@@ -799,7 +842,8 @@
       "historic": "monument",
       "name": "A. Isahakyan Monument"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217843365",
@@ -813,7 +857,8 @@
       "historic": "monument",
       "name": "Hovhannes Shiraz Monument"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217844913",
@@ -827,7 +872,8 @@
       "historic": "monument",
       "name": "Mher Mkrtchyan Monument"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217850702",
@@ -841,7 +887,8 @@
       "historic": "monument",
       "name": "Shiraz Monument"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217851002",
@@ -855,7 +902,8 @@
       "historic": "monument",
       "name": "Isahakyan Monument"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217854182",
@@ -870,7 +918,8 @@
       "name": "Kumayri Archeological Museum",
       "tourism": "museum"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217855897",
@@ -885,7 +934,8 @@
       "cuisine": "coffee_shop",
       "name": "\"Anusharan\""
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5217867200",
@@ -903,7 +953,8 @@
       "name": "\"Voske Tslik\"",
       "name:ru": "шашлычный двор"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Voske_tslik_gyumri_23.12.2025.jpg"
   },
   {
     "id": "node/5300436535",
@@ -927,7 +978,8 @@
       "phone": "+374 312 3 55 63, +374 312 3 33 99",
       "website": "https://gcc.am/"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/Sq4kDlM.jpg"
   },
   {
     "id": "node/5301991531",
@@ -943,7 +995,8 @@
       "name:en": "\"Golden Apricot\" Restaurant",
       "name:ru": "\"Золотой Абрикос\""
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5302476099",
@@ -962,7 +1015,8 @@
       "amenity": "cafe",
       "name": "Disney"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5305385288",
@@ -982,7 +1036,8 @@
       "name": "\"Kalinka\" Cafe",
       "price": "midrange"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5310630206",
@@ -1000,7 +1055,8 @@
       "name": "Style Gallery",
       "tourism": "gallery"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5830709885",
@@ -1014,7 +1070,8 @@
       "amenity": "bar",
       "name:en": "Coffe Shop"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/5991951785",
@@ -1035,7 +1092,8 @@
       "phone": "+37477231319",
       "website": "https://m.facebook.com/Montecristo-%EF%B8%8F-Toscana-1758255667583563/"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6189906185",
@@ -1053,7 +1111,8 @@
       "name:en": "HAVLABAR TABERN",
       "name:ru": "Хавлабар таверна"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6361799213",
@@ -1066,7 +1125,8 @@
     "tags": {
       "amenity": "restaurant"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6409766287",
@@ -1082,7 +1142,8 @@
       "addr:street": "Գորկու փողոց",
       "amenity": "restaurant"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6412065605",
@@ -1101,7 +1162,8 @@
       "name": "Պոնչիկ-Մոնչիկ",
       "name:en": "Ponchik-Monchik"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/aRC9hoT.jpg"
   },
   {
     "id": "node/6412121850",
@@ -1140,7 +1202,8 @@
       "power_supply": "yes",
       "socket:schuko": "5"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Tashir_pizza_gyumri_18.07.2025.jpg"
   },
   {
     "id": "node/6412134317",
@@ -1157,7 +1220,8 @@
       "amenity": "restaurant",
       "name": "Florenc"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6412290217",
@@ -1177,7 +1241,8 @@
       "opening_hours": "Mo-Su 10:00-23:00",
       "website": "https://foodtime.am/"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6412415069",
@@ -1190,7 +1255,8 @@
     "tags": {
       "historic": "memorial"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6412415789",
@@ -1210,7 +1276,8 @@
       "name:ru": "Степану Шаумяну",
       "subject:wikidata": "Q466144"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6414460530",
@@ -1225,7 +1292,8 @@
       "name": "\"Cascade\"",
       "name:en": "\"Cascade\""
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6414553338",
@@ -1242,7 +1310,8 @@
       "amenity": "cafe",
       "name": "Kinder"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6414554049",
@@ -1259,7 +1328,8 @@
       "amenity": "fast_food",
       "name": "Karo"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6414640623",
@@ -1273,7 +1343,8 @@
       "historic": "monument",
       "name": "Սողոմոն Թեհլերյան"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6414640624",
@@ -1287,7 +1358,8 @@
       "historic": "monument",
       "name": "Գևորգ Չաուշ"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6414640625",
@@ -1301,7 +1373,8 @@
       "historic": "monument",
       "name": "Աղբյուր Սերոբ"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6414640626",
@@ -1315,7 +1388,8 @@
       "historic": "monument",
       "name": "Սոսե մայրիկ"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6421524693",
@@ -1330,7 +1404,8 @@
       "name": "Անուշարան",
       "name:en": "Anusharan"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6421524694",
@@ -1347,7 +1422,8 @@
       "amenity": "pub",
       "name": "Amigo"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6421532108",
@@ -1365,7 +1441,8 @@
       "phone": "+374 312 5 28 47,+374 312 5 01 34,+374 93 38 30 98",
       "tourism": "museum"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6423912261",
@@ -1379,7 +1456,8 @@
       "historic": "monument",
       "name:en": "Artyom Mesropi Petrosyan"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6424978387",
@@ -1394,7 +1472,8 @@
       "image": "https://i.imgur.com/6q7BBN9.jpg",
       "name": "Pizza jazz"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/6q7BBN9.jpg"
   },
   {
     "id": "node/6425097659",
@@ -1408,7 +1487,8 @@
       "historic": "monument",
       "name": "Քըրք Քըրքորյան"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6425097660",
@@ -1433,7 +1513,8 @@
       "opening_hours": "09:00-21:00",
       "outdoor_seating": "yes"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6425137820",
@@ -1447,7 +1528,8 @@
       "amenity": "cafe",
       "name": "Little Sweets"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6428297655",
@@ -1460,7 +1542,8 @@
     "tags": {
       "historic": "memorial"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6428382775",
@@ -1479,7 +1562,8 @@
       "wikidata": "Q4499147",
       "wikipedia": "hy:Պատվո բլուր"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/-_2024_1_%D0%A5%D0%BE%D0%BB%D0%BC_%D1%87%D0%B5%D1%81%D1%82%D0%B8.gif/960px--_2024_1_%D0%A5%D0%BE%D0%BB%D0%BC_%D1%87%D0%B5%D1%81%D1%82%D0%B8.gif"
   },
   {
     "id": "node/6428408710",
@@ -1492,7 +1576,8 @@
     "tags": {
       "historic": "ruins"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6430961453",
@@ -1507,7 +1592,8 @@
       "name": "Tumanyan Shaurma",
       "opening_hours": "Mo-Su 09:00-24:00"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6517542286",
@@ -1521,7 +1607,8 @@
       "name:fr": "Fête foraine",
       "tourism": "attraction"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6911956526",
@@ -1535,7 +1622,8 @@
       "name": "I Love Gyumri",
       "tourism": "attraction"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6911956528",
@@ -1549,7 +1637,8 @@
       "amenity": "pub",
       "name": "Gurdjieff Tavern"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/6911956529",
@@ -1574,7 +1663,8 @@
       "outdoor_seating": "yes",
       "phone": "+374 33 668998"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/7041935955",
@@ -1597,7 +1687,8 @@
       "opening_hours": "Mo-Su 10:00-23:00",
       "phone": "+374 312 3 55 63"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/yYbxSyY.jpg"
   },
   {
     "id": "node/7191402485",
@@ -1611,7 +1702,8 @@
       "amenity": "cafe",
       "name:ru": "Пончик-Мончик"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/8252140223",
@@ -1632,7 +1724,8 @@
       "opening_hours": "24/7",
       "phone": "+37494000195"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/8850868717",
@@ -1650,7 +1743,8 @@
       "name:en": "Nash dvor",
       "name:ru": "Наш двор"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/8869829318",
@@ -1664,7 +1758,8 @@
       "amenity": "restaurant",
       "name:en": "Cherkezi Dzor"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/8901697317",
@@ -1683,7 +1778,8 @@
       "name:fr": "Gyumri Garden house (GGH)",
       "name:hy": "Gyumri Garden house (GGH)"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/9010413117",
@@ -1697,7 +1793,8 @@
       "historic": "memorial",
       "memorial": "war_memorial"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/9088108619",
@@ -1716,7 +1813,8 @@
       "power_supply": "yes",
       "socket:schuko": "10"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/9088112017",
@@ -1742,7 +1840,8 @@
       "phone": "+37444200301",
       "smoking": "no"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/9088112018",
@@ -1756,7 +1855,8 @@
       "amenity": "bar",
       "name:en": "Chill & cocktail bar"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/9089016319",
@@ -1770,7 +1870,8 @@
       "amenity": "restaurant",
       "name": "Ani"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/9726162734",
@@ -1783,7 +1884,8 @@
     "tags": {
       "tourism": "viewpoint"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/9726162739",
@@ -1802,7 +1904,8 @@
       "name:ru": "Вечный Огонь",
       "war_memorial": "yes"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/9726162751",
@@ -1816,7 +1919,8 @@
       "historic": "memorial",
       "name:hy": "Սիրեմգը"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/10575730542",
@@ -1842,7 +1946,8 @@
       "name:ru": "Ктор М таверна",
       "opening_hours": "Mo-Su 10:00-22:00"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Ktor_m_gyumri_09.02.2026.jpg"
   },
   {
     "id": "node/10799373305",
@@ -1862,7 +1967,8 @@
       "phone": "+37477616619",
       "website": "https://gyumri.bar"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/lqe6nTq.png"
   },
   {
     "id": "node/10875188805",
@@ -1876,7 +1982,8 @@
       "name:en": "Varem Marem Art Studio and Coffee",
       "tourism": "gallery"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/10875753006",
@@ -1891,7 +1998,8 @@
       "name:en": "Old pedestrian street",
       "tourism": "attraction"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/10875753506",
@@ -1906,7 +2014,8 @@
       "name:en": "Old restored inner plaza",
       "tourism": "attraction"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/10882960005",
@@ -1920,7 +2029,8 @@
       "name:en": "Old factory building complex",
       "tourism": "attraction"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/10883895107",
@@ -1934,7 +2044,8 @@
       "amenity": "restaurant",
       "name:en": "GWOOG Gastro House"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/10923726998",
@@ -1952,7 +2063,8 @@
       "amenity": "bar",
       "name": "Tetra bar"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/10963791660",
@@ -1966,7 +2078,8 @@
       "historic": "locomotive",
       "name:ru": "Танк-паровоз № 9774"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11110019005",
@@ -1979,7 +2092,8 @@
     "tags": {
       "amenity": "fast_food"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11110019006",
@@ -1999,7 +2113,8 @@
       "power_supply": "yes",
       "socket:schuko": "20"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11112330605",
@@ -2014,7 +2129,8 @@
       "name": "Shaurmix",
       "name:ru": "Шаурмикс"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11208469038",
@@ -2028,7 +2144,8 @@
       "amenity": "restaurant",
       "name": "Кумкума"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11228704801",
@@ -2047,7 +2164,8 @@
       "name:ru": "маки суши",
       "phone": "+374 93 99 11 39, +374 55 99 11 39"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/47oqjQw.jpg"
   },
   {
     "id": "node/11288119200",
@@ -2068,7 +2186,8 @@
       "name:en": "meat & beat",
       "opening_hours": "Mo-Su 10:00-23:00"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Meat_and_beat_gyumri_16.07.2025.jpg"
   },
   {
     "id": "node/11340886369",
@@ -2089,7 +2208,8 @@
       "opening_hours": "Mo-Su 09:00-23:00",
       "outdoor_seating": "no"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/uM3KeGG.jpg"
   },
   {
     "id": "node/11343561722",
@@ -2107,7 +2227,8 @@
       "name:en": "tokyo",
       "website": "https://www.instagram.com/tokyo_gyumri"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/mZsoELh.jpg"
   },
   {
     "id": "node/11518588670",
@@ -2122,7 +2243,8 @@
       "amenity": "restaurant",
       "name": "Անի"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11518597869",
@@ -2137,7 +2259,8 @@
       "amenity": "restaurant",
       "name": "Անի"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11778821052",
@@ -2154,7 +2277,8 @@
       "name": "gyros original",
       "phone": "+374 94 52 12 84"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/BJ1ikd4.jpg"
   },
   {
     "id": "node/11778952349",
@@ -2189,7 +2313,8 @@
       "website": "https://www.kfc-armenia.com/",
       "wheelchair": "no"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/SBschle.jpg"
   },
   {
     "id": "node/11778958373",
@@ -2207,7 +2332,8 @@
       "name:ru": "миссис гирос",
       "phone": "+374 77 25 06 03"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://i.imgur.com/KbxZ7sF.jpg"
   },
   {
     "id": "node/11783459406",
@@ -2224,7 +2350,8 @@
       "name:ru": "Галерея паутинного исскуства Андраника Аветисяна",
       "tourism": "gallery"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11783459407",
@@ -2243,7 +2370,8 @@
       "outdoor_seating": "no",
       "takeaway": "only"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/11783459408",
@@ -2258,7 +2386,8 @@
       "name": "Գյումրի էքսպրեսս",
       "name:en": "Gyumri express"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12023279175",
@@ -2272,7 +2401,8 @@
       "historic": "memorial",
       "memorial": "statue"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12023279187",
@@ -2285,7 +2415,8 @@
     "tags": {
       "amenity": "fast_food"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12023279220",
@@ -2300,7 +2431,8 @@
       "historic": "yes",
       "tourism": "attraction"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12023279233",
@@ -2319,7 +2451,8 @@
       "opening_hours:signed": "no",
       "phone": "+374 94 646363"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12083600132",
@@ -2342,7 +2475,8 @@
       "takeaway": "yes",
       "website": "https://dodopizza.am/"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12259245048",
@@ -2357,7 +2491,8 @@
       "memorial": "stele",
       "stele": "khachkar"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12259245050",
@@ -2372,7 +2507,8 @@
       "memorial": "stele",
       "stele": "khachkar"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12259245061",
@@ -2386,7 +2522,8 @@
       "historic": "memorial",
       "memorial": "bust"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12259245066",
@@ -2403,7 +2540,8 @@
       "name:en": "Vahan Cheraz",
       "wikidata": "Q56012093"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Monument_to_Vahan_Cheraz_%283%29.jpg"
   },
   {
     "id": "node/12259287795",
@@ -2416,7 +2554,8 @@
     "tags": {
       "amenity": "restaurant"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12649684101",
@@ -2430,7 +2569,8 @@
       "historic": "wayside_cross",
       "name": "Тух Манук"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12649684201",
@@ -2444,7 +2584,8 @@
       "historic": "wayside_cross",
       "name": "Тух Манук"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12812274201",
@@ -2457,7 +2598,8 @@
     "tags": {
       "historic": "memorial"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12895535301",
@@ -2474,7 +2616,8 @@
       "name": "Miro",
       "opening_hours": "Mo-Su 10:00-00:00"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12895623401",
@@ -2489,7 +2632,8 @@
       "addr:street": "Ghorghanayn Street",
       "historic": "memorial"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12896300802",
@@ -2502,7 +2646,8 @@
     "tags": {
       "historic": "memorial"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12896457901",
@@ -2515,7 +2660,8 @@
     "tags": {
       "historic": "memorial"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12896458001",
@@ -2528,7 +2674,8 @@
     "tags": {
       "historic": "memorial"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12896458101",
@@ -2542,7 +2689,8 @@
       "historic": "memorial",
       "name:en": "Pushkin"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12896491401",
@@ -2557,7 +2705,8 @@
       "cuisine": "crepe;hotdog;pancake",
       "name:en": "Yamvagon"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12896491501",
@@ -2570,7 +2719,8 @@
     "tags": {
       "amenity": "fast_food"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12896889902",
@@ -2587,7 +2737,8 @@
       "cuisine": "international",
       "name": "Zero"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/12966542859",
@@ -2607,7 +2758,8 @@
       "name:ru": "Тар-ту",
       "opening_hours": "24/7"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Tar-tu_gyumri_21.06.2025.jpg"
   },
   {
     "id": "node/12993293579",
@@ -2620,7 +2772,8 @@
     "tags": {
       "amenity": "pub"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/13016886644",
@@ -2635,7 +2788,8 @@
       "image": "https://commons.wikimedia.org/wiki/File:Pulpulak_mets_1_gyumri_21.07.2025.jpg",
       "memorial": "stele"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Pulpulak_mets_1_gyumri_21.07.2025.jpg"
   },
   {
     "id": "node/13092080265",
@@ -2654,7 +2808,8 @@
       "name": "poleyan shaurma",
       "wheelchair": "no"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Poleyan_shaurma_gyumri_20.08.2025.jpg"
   },
   {
     "id": "node/13235092601",
@@ -2671,7 +2826,8 @@
       "cuisine": "sushi",
       "name": "Sushi Sakura"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/13334236236",
@@ -2687,7 +2843,8 @@
       "memorial": "stele",
       "stele": "khachkar"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Khachkar_pulpulak_gyumri_26.11.2025.jpg"
   },
   {
     "id": "node/13366508413",
@@ -2701,7 +2858,8 @@
       "historic": "memorial",
       "memorial": "plaque"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/13415227435",
@@ -2724,7 +2882,8 @@
       "takeaway": "yes",
       "wheelchair": "limited"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": null
   },
   {
     "id": "node/13610111756",
@@ -2740,6 +2899,7 @@
       "image": "https://commons.wikimedia.org/wiki/File:Shaurma_24_gyumri_28.02.2026.jpg",
       "opening_hours": "24/7"
     },
-    "source": "openstreetmap"
+    "source": "openstreetmap",
+    "image_url": "https://commons.wikimedia.org/wiki/File:Shaurma_24_gyumri_28.02.2026.jpg"
   }
 ]

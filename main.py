@@ -139,6 +139,15 @@ async def _send_place_navigation(
     text = "\n".join(lines)
     log.debug(f"[U:{uid}][NAV] Card text:\n{text}")
     kb = get_on_route_keyboard(lang) if show_route_kb else None
+    
+    # Send photo first if available
+    image_url = place.get("image_url")
+    if image_url:
+        try:
+            await target.answer_photo(photo=image_url)
+        except Exception as e:
+            log.warning(f"[U:{uid}][NAV] Failed to send photo {image_url}: {e}")
+            
     await target.answer(text, parse_mode="HTML", reply_markup=kb)
 
     if lat and lon:
