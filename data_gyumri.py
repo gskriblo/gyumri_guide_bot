@@ -127,6 +127,101 @@ def get_nearby_places(
     return result
 
 
+def has_real_name(p: dict) -> bool:
+    for key in ("name_ru", "name_en", "name"):
+        v = p.get(key, "")
+        if v and v.strip().lower() != "unknown":
+            return True
+    return False
+
+
+
+def search_places_by_keywords(
+    keywords: List[str],
+    limit: int = 15,
+) -> List[Dict[str, Any]]:
+    """
+    Returns places whose name / category / tags contain at least one keyword.
+    Ranked by number of keyword hits (descending). Falls back to all named
+    places if no keyword matches anything.
+    """
+    places = _load_places()
+    kw_lower = [k.lower().strip() for k in keywords if k.strip()]
+
+    # Category aliases so common words map to our category strings
+    CATEGORY_ALIASES = {
+        "museum": "museum",
+        "museums": "museum",
+        "музей": "museum",
+        "музеи": "museum",
+        "sight": "sight",
+        "sights": "sight",
+        "достопримечательност": "sight",
+        "historic": "historic_architecture",
+        "history": "historic_architecture",
+        "monument": "historic_architecture",
+        "monuments": "historic_architecture",
+        "памятник": "historic_architecture",
+        "памятники": "historic_architecture",
+        "architecture": "historic_architecture",
+        "church": "sight",
+        "cathedral": "sight",
+        "food": "food",
+        "eat": "food",
+        "restaurant": "food",
+        "cafe": "food",
+        "кафе": "food",
+        "ресторан": "food",
+        "еда": "food",
+        "поесть": "food",
+    }
+
+    def _score(p: dict) -> int:
+        if not has_real_name(p):
+            return -1
+        # Build a single searchable string
+        searchable = " ".join([
+            str(p.get("name", "")),
+            str(p.get("name_ru", "")),
+            str(p.get("name_en", "")),
+            str(p.get("category", "")),
+        ]).lower()
+        tags = p.get("tags", {})
+        if isinstance(tags, dict):
+            searchable += " " + " ".join(str(v) for v in tags.values()).lower()
+
+        score = 0
+        for kw in kw_lower:
+            if kw in searchable:
+                score += 1
+            # Check category aliases
+            cat_match = CATEGORY_ALIASES.get(kw)
+            if cat_match and p.get("category") == cat_match:
+                score += 1
+        return score
+
+    scored = [(p, _score(p)) for p in places]
+    # Keep only places with real names and score >= 1
+    matched = [(p, s) for p, s in scored if s >= 1]
+
+    if not matched:
+        # Fallback: return all named places (top limit by order in file)
+        matched = [(p, 0) for p, s in scored if s >= 0]
+
+    matched.sort(key=lambda x: x[1], reverse=True)
+    return [p for p, _ in matched[:limit]]
+
+
+def get_best_name(p: dict, language: str = "ru") -> str:
+    """Helper to get a real name, avoiding 'Unknown' strings or empty values."""
+    keys = [f"name_{language}", "name_en", "name_ru", "name"]
+    for k in keys:
+        v = p.get(k, "")
+        if v and v.strip().lower() != "unknown":
+            return v
+    return str(p.get("id", "Unknown"))
+
+
 def get_place_by_id(place_id: str) -> Optional[Dict[str, Any]]:
     # place_id might be a name for OSM or an ID for OTM
     places = _load_places()
@@ -154,9 +249,7 @@ def format_places_for_user(places: List[Dict[str, Any]], language: str) -> str:
 
     for idx, p in enumerate(places, start=1):
         # Handle both OSM and OTM formats safely
-        name = p.get("name_ru") if language == "ru" else p.get("name_en")
-        if not name:
-            name = p.get("name_en") or p.get("name_ru") or p.get("name") or "Unknown place"
+        name = get_best_name(p, language)
 
         desc_key = "short_description_ru" if language == "ru" else "short_description_en"
         descr = p.get(desc_key) or ""

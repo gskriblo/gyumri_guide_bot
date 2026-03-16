@@ -91,6 +91,13 @@ def set_program(user_id: int, program_id: str) -> None:
     save_user_state(state)
 
 
+def set_tour_hours(user_id: int, hours: float) -> None:
+    state = get_user_state(user_id)
+    state.preferences.time_available_hours = hours
+    save_user_state(state)
+    log.info(f"[U:{user_id}][STATE] tour_hours={hours}")
+
+
 def save_generated_programs(user_id: int, programs: Dict[str, List[str]]) -> None:
     state = get_user_state(user_id)
     state.generated_programs = programs

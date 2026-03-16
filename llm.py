@@ -9,7 +9,7 @@ from langchain_openai import ChatOpenAI
 
 from state import UserState
 from prompts import build_system_prompt
-from data_gyumri import get_nearby_places, get_place_by_id, _load_places
+from data_gyumri import get_nearby_places, get_place_by_id, _load_places, search_places_by_keywords
 
 
 load_dotenv()
@@ -198,3 +198,67 @@ def generate_reply(user_id: int, user_input: str, user_state: UserState) -> str:
 
     return response.content
 
+
+def suggest_places_from_preferences(
+    user_id: int,
+    preferences_text: str,
+    user_state: "UserState",
+) -> str:
+    """
+    Called right after the user describes what they want to see.
+    Searches the DB for matching places and asks the LLM to suggest
+    3-5 of them with a short personalised description.
+    """
+    from logger_setup import log
+    lang = user_state.language if user_state.language in ("ru", "en") else "en"
+
+    # Split preference text into keywords (words longer than 2 chars)
+    keywords = [w.strip(".,!?;:") for w in preferences_text.split() if len(w.strip()) > 2]
+    log.debug(f"[U:{user_id}][SUGGEST] keywords={keywords}")
+
+    matched_places = search_places_by_keywords(keywords, limit=15)
+    log.debug(f"[U:{user_id}][SUGGEST] matched places: {len(matched_places)}")
+
+    if lang == "ru":
+        system_text = (
+            "Ты виртуальный туристический гид по Гюмри, Армения.\n"
+            "Пользователь описал, что хотел бы увидеть или попробовать. "
+            "Ниже — реальные места из нашей базы данных, подходящие под его запрос.\n"
+            "Выбери 3–5 наиболее подходящих мест и кратко опиши каждое (1-2 предложения). "
+            "Не придумывай другие места — используй только список ниже.\n"
+            "В конце предложи отправить геолокацию для построения полного маршрута."
+        )
+        user_pref_msg = f"Пользователь написал: {preferences_text}\n\nДоступные места из базы:"
+    else:
+        system_text = (
+            "You are a virtual tourist guide for Gyumri, Armenia.\n"
+            "The user described what they'd like to see or try. "
+            "Below are real places from our database that match their request.\n"
+            "Pick 3–5 of the most suitable ones and briefly describe each (1-2 sentences). "
+            "Do not invent other places — use only the list below.\n"
+            "At the end, invite the user to send their location to build a full route."
+        )
+        user_pref_msg = f"The user said: {preferences_text}\n\nAvailable places from the database:"
+
+    # Build the place list context
+    place_lines = []
+    for idx, p in enumerate(matched_places, start=1):
+        name = p.get(f"name_{lang}") or p.get("name_en") or p.get("name_ru") or p.get("name") or ""
+        category = p.get("category", "")
+        tags = p.get("tags", {})
+        cuisine = tags.get("cuisine", "") if isinstance(tags, dict) else ""
+        extra = f" [{cuisine}]" if cuisine else f" [{category}]" if category else ""
+        place_lines.append(f"{idx}. {name}{extra}")
+
+    places_block = "\n".join(place_lines)
+    full_user_msg = f"{user_pref_msg}\n{places_block}"
+
+    messages = [
+        SystemMessage(content=system_text),
+        HumanMessage(content=full_user_msg),
+    ]
+
+    log.debug(f"[U:{user_id}][SUGGEST] sending to LLM ({len(matched_places)} places)")
+    response = model.invoke(messages)
+    log.debug(f"[U:{user_id}][SUGGEST] LLM replied ({len(response.content)} chars)")
+    return response.content

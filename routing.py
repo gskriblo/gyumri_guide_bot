@@ -1,22 +1,30 @@
-from typing import Dict, List, Any, Optional
-from data_gyumri import get_nearby_places, _load_places, _haversine_km
+from typing import Dict, List, Any, Optional, Set
+from data_gyumri import get_nearby_places, _load_places, _haversine_km, search_places_by_keywords, get_best_name, has_real_name
 from logger_setup import log
 
 
 def generate_programs(
-    lat: float, lon: float, time_hours: float = 4.0, user_id: Optional[int] = None
+    lat: float, lon: float, time_hours: float = 4.0, user_id: Optional[int] = None,
+    interests: Optional[List[str]] = None
 ) -> Dict[str, List[Dict[str, Any]]]:
     """
     Генерирует 3 варианта программы тура (Classic, Food, Chill walk).
     Возвращает словарь { program_id: [place_dict, ...] }
     """
-    def _build_sequential_route(candidates: List[Dict[str, Any]], start_lat: float, start_lon: float, target_count: int) -> List[Dict[str, Any]]:
+    def _build_sequential_route(
+        candidates: List[Dict[str, Any]], 
+        start_lat: float, 
+        start_lon: float, 
+        target_count: int,
+        pinned_ids: Optional[Set[str]] = None
+    ) -> List[Dict[str, Any]]:
         if not candidates:
             return []
         
         route = []
         current_lat, current_lon = start_lat, start_lon
         remaining = list(candidates)
+        pinned_ids = pinned_ids or set()
         
         for _ in range(target_count):
             if not remaining:
@@ -25,7 +33,11 @@ def generate_programs(
             best_place = None
             best_dist = float('inf')
             
-            for p in remaining:
+            # First, check if any pinned place is available
+            available_pinned = [p for p in remaining if str(p.get("id")) in pinned_ids]
+            search_pool = available_pinned if available_pinned else remaining
+            
+            for p in search_pool:
                 p_lat = float(p.get("lat", 0))
                 p_lon = float(p.get("lon", 0))
                 if p_lat == 0 or p_lon == 0:
@@ -59,15 +71,27 @@ def generate_programs(
         cats[c] = cats.get(c, 0) + 1
     log.debug(f"{tag}[ROUTING] Categories: {cats}")
 
+    pinned_places = []
+    pinned_ids = set()
+    if interests:
+        pinned_places = search_places_by_keywords(interests, limit=20)
+        pinned_ids = {str(p.get("id")) for p in pinned_places}
+        log.debug(f"{tag}[ROUTING] Pinned places based on interests: {len(pinned_places)}")
+
     programs = {"classic": [], "food": [], "chill": []}
 
     # 1. Classic
-    classic_candidates = [p for p in nearby_all if p.get("category") in ("sight", "museum", "historic_architecture")]
+    classic_candidates = [
+        p for p in nearby_all
+        if p.get("category") in ("sight", "museum", "historic_architecture") and has_real_name(p)
+    ]
     log.debug(f"{tag}[ROUTING] Classic candidates: {len(classic_candidates)}")
-    programs["classic"] = _build_sequential_route(classic_candidates, lat, lon, target_places_count + 1)
+    programs["classic"] = _build_sequential_route(
+        classic_candidates, lat, lon, target_places_count + 1, pinned_ids=pinned_ids
+    )
 
     # 2. Food
-    food_candidates = [p for p in nearby_all if p.get("category") == "food"]
+    food_candidates = [p for p in nearby_all if p.get("category") == "food" and has_real_name(p)]
     log.debug(f"{tag}[ROUTING] Food candidates: {len(food_candidates)}")
     food_program = []
     
@@ -77,14 +101,14 @@ def generate_programs(
     current_lat, current_lon = lat, lon
     for i in range(target_places_count):
         if i % 2 == 0 and rem_food:
-            best_f = _build_sequential_route(rem_food, current_lat, current_lon, 1)
+            best_f = _build_sequential_route(rem_food, current_lat, current_lon, 1, pinned_ids=pinned_ids)
             if best_f:
                 food_program.append(best_f[0])
                 rem_food.remove(best_f[0])
                 current_lat = float(best_f[0].get("lat", current_lat))
                 current_lon = float(best_f[0].get("lon", current_lon))
         elif rem_classic:
-            best_c = _build_sequential_route(rem_classic, current_lat, current_lon, 1)
+            best_c = _build_sequential_route(rem_classic, current_lat, current_lon, 1, pinned_ids=pinned_ids)
             if best_c:
                 food_program.append(best_c[0])
                 rem_classic.remove(best_c[0])
@@ -95,12 +119,14 @@ def generate_programs(
 
     # 3. Chill walk
     chill_count = max(2, target_places_count - 1)
-    chill_candidates = [p for p in nearby_all if float(p.get("_distance_km", 999)) < 1.5]
+    chill_candidates = [p for p in nearby_all if float(p.get("_distance_km", 999)) < 1.5 and has_real_name(p)]
     log.debug(f"{tag}[ROUTING] Chill candidates (<1.5km): {len(chill_candidates)}")
-    programs["chill"] = _build_sequential_route(chill_candidates, lat, lon, chill_count)
+    programs["chill"] = _build_sequential_route(
+        chill_candidates, lat, lon, chill_count, pinned_ids=pinned_ids
+    )
 
     for prog_id, places in programs.items():
-        names = [p.get("name_ru") or p.get("name_en") or p.get("name") or str(p.get("id", "Unknown")) for p in places]
+        names = [get_best_name(p, "ru") for p in places]
         log.info(f"{tag}[ROUTING] '{prog_id}': {len(places)} places → {names}")
 
     return programs
@@ -130,7 +156,7 @@ def format_program_options(programs: Dict[str, List[Dict[str, Any]]], language: 
         title = title_map.get(prog_id, {}).get(language, prog_id)
         place_names = []
         for p in places:
-            name = p.get(f"name_{language}") or p.get("name_en") or p.get("name_ru") or p.get("name") or "Unknown"
+            name = get_best_name(p, language)
             place_names.append(name)
 
         points_str = " -> ".join(place_names)

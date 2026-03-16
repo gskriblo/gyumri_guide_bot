@@ -6,7 +6,7 @@ from data_gyumri import _haversine_km
 import os
 
 from logger_setup import log
-from llm import generate_reply
+from llm import generate_reply, suggest_places_from_preferences
 from state import (
     get_user_state,
     update_stage,
@@ -17,7 +17,8 @@ from state import (
     set_program,
     save_generated_programs,
     reset_user_state,
-    mark_place_visited
+    mark_place_visited,
+    set_tour_hours
 )
 from data_gyumri import get_nearby_places, format_places_for_user, get_place_by_id
 from routing import generate_programs, format_program_options
@@ -65,6 +66,15 @@ def get_style_keyboard(lang: str) -> InlineKeyboardMarkup:
             [InlineKeyboardButton(text="Strict 📝", callback_data="style_strict")],
             [InlineKeyboardButton(text="Fun 🎉", callback_data="style_fun")]
         ])
+
+def get_hours_keyboard(lang: str) -> InlineKeyboardMarkup:
+    options = [(1, "1h"), (2, "2h"), (3, "3h"), (4, "4h"), (6, "6h"), (8, "8h")]
+    buttons = [
+        [InlineKeyboardButton(text=label, callback_data=f"hours_{val}")]
+        for val, label in options
+    ]
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
+
 
 def get_program_keyboard(lang: str) -> InlineKeyboardMarkup:
     if lang == "ru":
@@ -227,16 +237,19 @@ async def handle_message(message: types.Message):
     if state.stage == "ASK_PREFERENCES":
         log.debug(f"[U:{uid}][MSG] ASK_PREFERENCES → saving: {user_input!r}")
         set_raw_preferences(uid, user_input)
+
+        # Ask the LLM to suggest real matching places from the DB
+        suggestion = suggest_places_from_preferences(uid, user_input, state)
+        await message.answer(suggestion)
+
         if state.language == "ru":
             await message.answer(
-                "Спасибо! Я запомнил твои пожелания.\n\n"
-                "Чтобы я мог построить маршрут от твоей текущей точки, пожалуйста, "
+                "Чтобы построить полный маршрут от твоей позиции, "
                 "отправь геолокацию через кнопку 📎 → «Геопозиция»."
             )
         else:
             await message.answer(
-                "Thank you! I've saved your preferences.\n\n"
-                "To build a route from your current position, please send your location "
+                "To build a full route from your position, please send your location "
                 "via the 📎 → \u201cLocation\u201d button."
             )
         update_stage(uid, "ASK_LOCATION_REQUIRED")
@@ -245,6 +258,12 @@ async def handle_message(message: types.Message):
     if state.stage == "ASK_LOCATION_REQUIRED":
         log.debug(f"[U:{uid}][MSG] ASK_LOCATION_REQUIRED → prompt geo")
         msg = "Пожалуйста, отправь геолокацию." if state.language == "ru" else "Please send your location."
+        await message.answer(msg)
+        return
+
+    if state.stage == "ASK_HOURS":
+        log.debug(f"[U:{uid}][MSG] ASK_HOURS → prompt buttons")
+        msg = "Пожалуйста, выбери длительность кнопкой выше." if state.language == "ru" else "Please choose a duration using the buttons above."
         await message.answer(msg)
         return
 
@@ -303,12 +322,12 @@ async def process_callback(callback_query: types.CallbackQuery):
             if state.language == "ru":
                 await callback_query.message.answer(
                     "Отлично, стиль сохранен!\n"
-                    "Расскажи, что бы ты хотел увидеть в Гюмри и сколько у тебя времени?"
+                    "Расскажи, что бы ты хотел увидеть в Гюмри?"
                 )
             else:
                 await callback_query.message.answer(
                     "Great, style saved!\n"
-                    "Tell me what you'd like to see in Gyumri and how much time you have?"
+                    "Tell me what you'd like to see in Gyumri?"
                 )
             update_stage(uid, "ASK_PREFERENCES")
         else:
@@ -445,6 +464,42 @@ async def process_callback(callback_query: types.CallbackQuery):
                 prefix_en="🍽 Let's go here:",
             )
 
+    elif data.startswith("hours_"):
+        hours = float(data.split("_")[1])
+        log.info(f"[U:{uid}][CB] hours chosen: {hours}")
+        set_tour_hours(uid, hours)
+        update_stage(uid, "SHOW_PROGRAM_OPTIONS")
+
+        await callback_query.message.edit_reply_markup(reply_markup=None)
+
+        state = get_user_state(uid)
+        if state.last_location:
+            lat, lon = state.last_location
+            log.debug(f"[U:{uid}][CB] generating programs for {hours}h")
+            programs = generate_programs(
+                lat, lon, 
+                time_hours=hours, 
+                user_id=uid, 
+                interests=state.preferences.interests
+            )
+
+            programs_ids = {
+                prog_id: [p["id"] for p in places]
+                for prog_id, places in programs.items()
+            }
+            log.debug(f"[U:{uid}][CB] program IDs: { {k: len(v) for k, v in programs_ids.items()} }")
+            for prog_id, ids in programs_ids.items():
+                log.debug(f"[U:{uid}][CB]   {prog_id}: {ids}")
+            save_generated_programs(uid, programs_ids)
+
+            text = format_program_options(programs, language=state.language)
+            log.debug(f"[U:{uid}][CB] options text:\n{text}")
+            await callback_query.message.answer(text, reply_markup=get_program_keyboard(state.language))
+        else:
+            msg = "Не удалось найти геопозицию. Отправь её снова." if state.language == "ru" else "Location not found. Please send it again."
+            update_stage(uid, "ASK_LOCATION_REQUIRED")
+            await callback_query.message.answer(msg)
+
     await callback_query.answer()
 
 
@@ -462,23 +517,17 @@ async def handle_location(message: types.Message):
     set_location(uid, lat, lon)
 
     if state.stage == "ASK_LOCATION_REQUIRED":
-        update_stage(uid, "SHOW_PROGRAM_OPTIONS")
-        target_hours = 4.0
-        log.debug(f"[U:{uid}][LOC] generating programs for {target_hours}h")
-        programs = generate_programs(lat, lon, time_hours=target_hours, user_id=uid)
-
-        programs_ids = {
-            prog_id: [p["id"] for p in places]
-            for prog_id, places in programs.items()
-        }
-        log.debug(f"[U:{uid}][LOC] program IDs: { {k: len(v) for k, v in programs_ids.items()} }")
-        for prog_id, ids in programs_ids.items():
-            log.debug(f"[U:{uid}][LOC]   {prog_id}: {ids}")
-        save_generated_programs(uid, programs_ids)
-
-        text = format_program_options(programs, language=state.language)
-        log.debug(f"[U:{uid}][LOC] options text:\n{text}")
-        await message.answer(text, reply_markup=get_program_keyboard(state.language))
+        update_stage(uid, "ASK_HOURS")
+        if state.language == "ru":
+            await message.answer(
+                "📍 Геопозиция получена! Сколько у тебя времени на прогулку?",
+                reply_markup=get_hours_keyboard(state.language)
+            )
+        else:
+            await message.answer(
+                "📍 Location received! How much time do you have for the tour?",
+                reply_markup=get_hours_keyboard(state.language)
+            )
     else:
         nearby = get_nearby_places(lat, lon, max_distance_km=2.0, limit=5)
         log.debug(f"[U:{uid}][LOC] nearby found: {len(nearby)}")
